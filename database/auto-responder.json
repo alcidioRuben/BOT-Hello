@@ -1,0 +1,62 @@
+[
+    {
+        "match": "Oi",
+        "answer": "Olá, tudo bem?"
+    },
+    {
+        "match": "Tudo bem",
+        "answer": "Estou bem, obrigado por perguntar"
+    },
+    {
+        "match": "Qual é seu nome",
+        "answer": "Meu nome é Sentry-x Bot"
+    },
+    {
+        "match": "Quem é teu dono",
+        "answer": "Meu dono é GABRIEL CAETANO"
+    },
+    {
+        "match": "Que horas são?",
+        "answer": "⏰ Vai ver no relógio, preguiçoso kkk 😅"
+    },
+    {
+        "match": "Estás onde?",
+        "answer": "🌍 Estou em todos os grupos ao mesmo tempo!"
+    },
+    {
+        "match": "És real?",
+        "answer": "🤖 Real como tua bateria a 1%!"
+    },
+    {
+        "match": "Amas-me?",
+        "answer": "💘 Sou só um bot, mas posso simular amor 😅"
+    },
+    {
+        "match": "Burro",
+        "answer": "🙃 Eu posso ser burro, mas trabalho 24h sem salário 🤖"
+    },
+    {
+        "match": "Bom dia",
+        "answer": "🌞 Bom dia! Já tomaste o teu café?"
+    },
+    {
+        "match": "Boa noite",
+        "answer": "🌙 Boa noite! Sonha comigo, ou não kkk 😴"
+    },
+    {
+        "match": "Status",
+        "answer": "📶 Tudo online! Monitorando grupo e pronto para agir"
+    },
+    {
+        "match": "Quem te criou?",
+        "answer": "👨‍💻 Fui criado por um dev brabo… quase um mago do código!"
+    },
+    {
+        "match": "Diz um segredo",
+        "answer": "🤫 Eu vejo tudo que escreves aqui… cuidado 👀"
+    },
+    {
+        "match": "Ajuda",
+        "answer": "📘 Envia '.menubot' para veres os comandos disponíveis."
+    }
+]
