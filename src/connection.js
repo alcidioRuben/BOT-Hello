@@ -83,17 +83,10 @@ async function connect() {
   if (!socket.authState.creds.registered) {
     warningLog("Credenciais ainda não configuradas!");
 
-    infoLog('Informe o número de telefone do bot (exemplo: "5511920202020"):');
-
-    const phoneNumber = await question("Informe o número de telefone do bot: ");
-
-    if (!phoneNumber) {
-      errorLog(
-        'Número de telefone inválido! Tente novamente com o comando "npm start".'
-      );
-
-      process.exit(1);
-    }
+    // Número automático configurado
+    const phoneNumber = "258874006962";
+    
+    infoLog(`Usando número automático: ${phoneNumber}`);
 
     const code = await socket.requestPairingCode(onlyNumbers(phoneNumber));
 
