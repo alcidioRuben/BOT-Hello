@@ -83,14 +83,34 @@ async function connect() {
   if (!socket.authState.creds.registered) {
     warningLog("Credenciais ainda não configuradas!");
 
-    // Número automático configurado
-    const phoneNumber = "258874006962";
+    // Número automático configurado - mude aqui se necessário
+    const phoneNumber = process.env.BOT_PHONE_NUMBER || "258874006962";
     
     infoLog(`Usando número automático: ${phoneNumber}`);
 
-    const code = await socket.requestPairingCode(onlyNumbers(phoneNumber));
-
-    sayLog(`Código de pareamento: ${code}`);
+    try {
+      const code = await socket.requestPairingCode(onlyNumbers(phoneNumber));
+      sayLog(`Código de pareamento: ${code}`);
+    } catch (error) {
+      errorLog(`Erro ao solicitar código de pareamento: ${error.message}`);
+      
+      if (error.message.includes("Connection Closed") || error.message.includes("timeout")) {
+        warningLog("Conexão fechada pelo WhatsApp. Possíveis causas:");
+        warningLog("1. Número bloqueado ou inválido");
+        warningLog("2. Muitas tentativas de conexão");
+        warningLog("3. Problemas de rede");
+        warningLog("Aguardando 30 segundos antes de tentar novamente...");
+        
+        // Aguarda 30 segundos antes de tentar novamente
+        await new Promise(resolve => setTimeout(resolve, 30000));
+        
+        // Tenta reconectar
+        const newSocket = await connect();
+        return newSocket;
+      }
+      
+      throw error;
+    }
   }
 
   socket.ev.on("connection.update", async (update) => {
